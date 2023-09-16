@@ -12,7 +12,7 @@ function Homepage() {
         if(user){
           navigate('/')
         }
-      }, [])
+      })
       
   return (
     <Container maxW='xl' centerContent>

@@ -31,7 +31,7 @@ function SingleChat({fetchAgain,setFetchAgain}) {
       socket.on("connected", () => setSocketConnected(true));
       socket.on("typing", () => setIsTyping(true));
       socket.on("stop typing", () => setIsTyping(false));
-    }, [])
+    })
 
 
     
@@ -49,7 +49,7 @@ function SingleChat({fetchAgain,setFetchAgain}) {
           setMessages([...messages, newMessageRecieved]);
         }
       });
-    },[]);
+    });
 
     
     useEffect(() => {
