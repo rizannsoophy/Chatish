@@ -8,7 +8,7 @@ import axios from 'axios'
 import ChatLoading from '../components/Authentication/ChatLoading'
 import UserListItem from '../components/UserAvatar/UserListItem'
 import { getSender } from '../config/ChatLogics'
-import NotificationBadge, { Effect } from "react-notification-badge";
+import ReactBadge from 'react-badge'
 
 function SideDrawer() {
 
@@ -115,11 +115,9 @@ function SideDrawer() {
             <div>
             <Menu>
               <MenuButton as={Button} p={1}>
-              <NotificationBadge
-                count={notification.length}
-                effect={Effect.SCALE}
-              />
+              <ReactBadge count={notification.length}>
                 <BellIcon fontSize='2xl'/>
+              </ReactBadge>
               </MenuButton>
               <MenuList paddingLeft='3'>
                 {!notification.length && " No new messages"}
