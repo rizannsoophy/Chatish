@@ -29,7 +29,7 @@ function GroupChatModal({children}) {
                 },
                 withCredentials: true,
             };
-            const {data}=await axios.get(`/api/user?search=${search}`,config)
+            const {data}=await axios.get(`https://chatish.onrender.com/api/user?search=${search}`,config)
             console.log(data)
             setLoading(false)
             setSearchResult(data)
@@ -86,7 +86,7 @@ function GroupChatModal({children}) {
               },
             };
             const { data } = await axios.post(
-              `/api/chat/group`,
+              `https://chatish.onrender.com/api/chat/group`,
               {
                 name: groupChatName,
                 users: JSON.stringify(selectedUsers.map((u) => u._id)),

@@ -73,7 +73,7 @@ function SingleChat({fetchAgain,setFetchAgain}) {
         setLoading(true);
   
         const { data } = await axios.get(
-          `/api/message/${selectedChat._id}`,
+          `https://chatish.onrender.com/api/message/${selectedChat._id}`,
           config
         )
         setMessages(data);
@@ -105,7 +105,7 @@ function SingleChat({fetchAgain,setFetchAgain}) {
           //console.log(user.token);
           setNewMessage("");
           const { data } = await axios.post(
-            "/api/message",
+            "https://chatish.onrender.com/api/message",
             {
               content: newMessage,
               chatId: selectedChat._id,
