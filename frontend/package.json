@@ -1,7 +1,7 @@
 {
   "name": "chat_frontend",
   "version": "0.1.0",
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://chatish.onrender.com//",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.16.4",
