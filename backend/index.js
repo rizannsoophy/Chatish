@@ -13,7 +13,7 @@ const path = require("path");
 const app=express()
 app.use(express.json())
 const corsOptions ={
-  origin:'https://main--chattish.netlify.app', 
+  origin:'http://localhost:3000', 
   credentials:true,            //access-control-allow-credentials:true
  // optionSuccessStatus:200
 }
@@ -34,19 +34,19 @@ app.use(errorHandler)
 
 // --------------------------deployment------------------------------
 
-//const __dirname1 = path.resolve();
+const __dirname1 = path.resolve();
 
-//if (process.env.NODE_ENV = "production") {
-  //app.use(express.static(path.join(__dirname1, "../frontend/build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "../frontend/build")));
 
-  //app.get("*", (req, res) =>
-    //res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
-  //);
-//} else {
-  //app.get("/", (req, res) => {
-    //res.send("API is running..");
-  //});
-//}
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "../frontend/build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
 
 
 // --------------------------deployment------------------------------
@@ -59,7 +59,7 @@ const io=require('socket.io')(server,{
   pingTimeout:6000,
   cors:{
 
-      origin:'https://main--chattish.netlify.app'
+      origin:'http://localhost:3000'
     },
 })
 
