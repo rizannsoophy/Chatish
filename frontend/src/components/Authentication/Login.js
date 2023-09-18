@@ -39,7 +39,7 @@ function Login() {
       };
 
       const { data } = await axios.post(
-        "https://chatish.onrender.com/api/user/login",
+        "/api/user/login",
         { email, password },
         config
       );
