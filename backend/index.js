@@ -13,7 +13,7 @@ const path = require("path");
 const app=express()
 app.use(express.json())
 const corsOptions ={
-  origin:'http://localhost:3000', 
+  origin:'https://main--chattish.netlify.app', 
   credentials:true,            //access-control-allow-credentials:true
  // optionSuccessStatus:200
 }
@@ -59,7 +59,7 @@ const io=require('socket.io')(server,{
   pingTimeout:6000,
   cors:{
 
-      origin:'http://localhost:3000'
+      origin:'https://main--chattish.netlify.app'
     },
 })
 
