@@ -97,7 +97,7 @@ function Signup() {
           },
         };
 
-        const {data} = await axios.post('/api/user',{name,email,password,pic,},config)
+        const {data} = await axios.post('https://chatish.onrender.com/api/user',{name,email,password,pic,},config)
         console.log(data);
         toast({
           title: 'Register successfull',

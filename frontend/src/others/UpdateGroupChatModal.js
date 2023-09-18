@@ -37,7 +37,7 @@ function UpdateGroupChatModal({fetchAgain,setFetchAgain,fetchMessages}) {
             },
           };
           const { data } = await axios.put(
-            `/api/chat/groupremove`,
+            `https://chatish.onrender.com/api/chat/groupremove`,
             {
               chatId: selectedChat._id,
               userId: user1._id,
